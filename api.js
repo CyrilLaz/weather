@@ -21,7 +21,7 @@ module.exports = class {
       this.#http
         .get(url, (res) => {
           const { statusCode, statusMessage } = res;
-          if (statusCode > 400) {
+          if (statusCode >= 404) {
             reject({ statusCode, statusMessage });
             return;
           }
